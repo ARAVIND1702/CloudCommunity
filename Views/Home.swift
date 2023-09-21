@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Home: View {
-    @State private var tabSelection = 3
+    @State private var tabSelection = 1
     init() {
         // Customize the appearance of the UITabBar
         let appearance = UITabBarAppearance()
@@ -36,7 +36,8 @@ struct Home: View {
             ProfileView()
                 .tag(5)
 
-        }.overlay(alignment:.bottom){
+        }
+        .overlay(alignment:.bottom){
             CustomTabView(tabSelection: $tabSelection)
         }
     }

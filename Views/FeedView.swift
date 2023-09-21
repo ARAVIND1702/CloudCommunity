@@ -13,6 +13,8 @@ struct FeedView: View {
     @State private var recentsPosts: [Post] = []
     @State private var createNewPost : Bool = false
     @State var postTextForTrigger: String = ""
+    @State var showingCredits: Bool = true
+
     @FocusState private var isViewVisible : Bool
 
     @AppStorage("user_profile_url") var profileURL: URL?
@@ -32,11 +34,6 @@ struct FeedView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 60,height: 60)
                 .clipShape(Circle())
-                
-//                .overlay(
-//                    Circle()
-//                        .stroke(Color.black, lineWidth: 2)
-//                )
                 Spacer()
                 VStack{
                     TextField("What's happening?", text: $postTextForTrigger)
@@ -66,6 +63,10 @@ struct FeedView: View {
             Spacer()
             ReusablePostsView(posts: $recentsPosts)
         }
+        .sheet(isPresented: $showingCredits) {
+                    Text("This app was brought to you by Hacking with Swift")
+                        .presentationDetents([.medium, .large])
+                }
         .fullScreenCover(isPresented: $createNewPost){
             CreatePost{ post in
                 recentsPosts.insert(post, at: 0)
