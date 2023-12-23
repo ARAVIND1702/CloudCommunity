@@ -11,7 +11,7 @@ struct YourRidesView: View {
     @State var Show = false
     var body: some View {
         VStack{
-            if(Show == false){
+           
                ReqList()
                 Button{
                     
@@ -35,13 +35,13 @@ struct YourRidesView: View {
                             
                         )
                 }
-            }
-            else{
-                    CreateNewRide(Show:$Show)
-            }
-      
-            Spacer()
+        }.sheet(isPresented: $Show){
+            CreateNewRide(Show: $Show)
         }
+            
+      
+           
+        
        
         
         

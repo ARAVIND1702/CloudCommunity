@@ -22,7 +22,7 @@ struct otherRides: View {
                         .padding(.top,30)
                 }else{
                     if carpools.isEmpty{
-                        Text("No Post's Found")
+                        Text("No Pool's Found")
                             .font(.caption)
                             .foregroundColor(.gray)
                             .padding(.top,30)
@@ -99,7 +99,7 @@ struct otherRides: View {
             if basedonUId {
                 // Add the "Joined" constraint using "arrayContains"
                 query = query.whereField("Joined", arrayContainsAny:[uid])
-                query = query.whereField("userUID", isEqualTo: uid)
+                
 
             }
             

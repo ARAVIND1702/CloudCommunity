@@ -14,11 +14,13 @@ struct RouteArray: View {
     @State private var rotation: Double = -25
     @State private var set: CGFloat = 0
     @Binding  var currentIndex : Int
-    var Livloc: () -> Void
+    @Binding var Toggle : Bool
+    var Livloc: () async -> Void
 
     var body: some View {
     
-            VStack{
+            ZStack{
+                
                 VStack{
                     
                     Text(currentIndex == 0 ? "" : arrayRoute[currentIndex - 1])
@@ -42,7 +44,7 @@ struct RouteArray: View {
                         Spacer()
                     }
                     
-                    .background(.gray.opacity(0.2))
+                    .background(.ultraThinMaterial.opacity(0.9))
                     
                     Text(currentIndex == arrayRoute.count-1 ? "" : arrayRoute[currentIndex + 1])
                         .font(.callout)
@@ -51,39 +53,18 @@ struct RouteArray: View {
                     
                 }
                 .frame(height: 200)
-                
-//                HStack {
-//                             Button(action: {
-//                                 withAnimation {
-//                                     currentIndex = (currentIndex + arrayRoute.count - 1) % arrayRoute.count
-//                                 }
-//                             }) {
-//                                 Text("Previous Route")
-//                                     .foregroundColor(.white)
-//                                     .padding()
-//                                     .background(Color.blue)
-//                                     .cornerRadius(10)
-//                             }
-//
-//                             Button(action: {
-//                                 withAnimation {
-//                                     currentIndex = (currentIndex + 1) % arrayRoute.count
-//                                 }
-//                             }) {
-//                                 Text("Next Route")
-//                                     .foregroundColor(.white)
-//                                     .padding()
-//                                     .background(Color.blue)
-//                                     .cornerRadius(10)
-//                             }
-//                         }
+                .offset(y:-100)
                 HStack{
                     Button{
                         withAnimation{
                             currentIndex = (currentIndex + arrayRoute.count - 1) % arrayRoute.count
-                            Livloc()
+                            Task{
+                                await Livloc()
+
+                            }
                             
                         }
+                     
                     }label: {
                         ZStack{
                             RoundedRectangle(cornerRadius: 25)
@@ -98,6 +79,8 @@ struct RouteArray: View {
 
                         }
                     }
+                    .opacity(!Toggle ? 0.9 : 0.2)
+                    .disabled(Toggle)
                     ZStack{
                         
                         
@@ -109,11 +92,13 @@ struct RouteArray: View {
                         Text(arrayRoute.count == currentIndex+1 ? "" : String( arrayRoute.count -  (currentIndex+1) ) )
                             .offset(x:-20)
                             .offset(y:8)
-                            .opacity(0.4)
+                            .foregroundColor(.white)
+                            .opacity(0.8)
                             .font(.caption)
                         Text(arrayRoute.count == currentIndex+1 ? " ":"Cities away")
                             .lineLimit(1)
-                            .opacity(0.4)
+                            .foregroundColor(.white)
+                            .opacity(0.8)
                             .font(.caption)
                             .frame(width:67)
                             .offset(x:20)
@@ -131,10 +116,12 @@ struct RouteArray: View {
                     Button{
                         withAnimation {
                             currentIndex = (currentIndex + 1) % arrayRoute.count
-                            Livloc()
+                            Task{
+                                await Livloc()
+
+                            }
 
                         }
-                        
                     }label: {
                         ZStack{
                             RoundedRectangle(cornerRadius: 25)
@@ -148,7 +135,8 @@ struct RouteArray: View {
                                 .offset(x:40)
 
                         }
-                    }
+                    }.opacity(!Toggle ? 0.9 : 0.2)
+                     .disabled(Toggle)
                         
                 }
             }
@@ -160,8 +148,12 @@ struct RouteArray: View {
     }
 }
 
-//struct RouteArray_Previews: PreviewProvider {
-//    static var previews: some View {
-//        RouteArray()
-//    }
-//}
+struct RouteArray_Previews: PreviewProvider {
+    @State static var arrayRoute: [String] = ["A few steps right, you will be in Zurich", "A few steps right, you will be in Zurich", "A few steps right, you will be in Zurich"]
+    @State static var currentIndex: Int = 0
+    @State static var Toggle: Bool = false
+
+    static var previews: some View {
+        RouteArray(arrayRoute: $arrayRoute, currentIndex: $currentIndex, Toggle: $Toggle, Livloc: {})
+    }
+}

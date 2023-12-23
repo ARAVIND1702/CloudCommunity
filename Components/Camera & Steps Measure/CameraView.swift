@@ -1,24 +1,23 @@
 import SwiftUI
-import AVFoundation
-import UIKit
 
 struct CameraView: View {
-    @ObservedObject var cameraViewModel = CameraViewModel()
+    @ObservedObject var cameraManager = CameraManager()
 
     var body: some View {
-        ZStack {
-                 CameraPreview(session: cameraViewModel.session)
-                     .edgesIgnoringSafeArea(.all)
-
-                 Text("Your Overlay Text")
-                     .foregroundColor(.white)
-                     .font(.largeTitle)
-                     .padding()
-             }
-             .onAppear {
-                 cameraViewModel.checkCameraAuthorization()
-             }
+        VStack {
+            // Add your camera preview layer here
+            // For example, if you have a CameraPreview struct:
+            CameraPreview(session: cameraManager.session)
+            
+        }
+        .onAppear {
+            self.cameraManager.startSession()
+        }
+        .onDisappear {
+            self.cameraManager.stopSession()
+        }
     }
-
-   
 }
+
+
+

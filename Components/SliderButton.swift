@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct SliderButton: View {
-    @State var Toggle = false
+   @Binding var Toggle : Bool
+   // @State var Toggle = false
+
     var body: some View {
-        VStack{
             Button{
                 withAnimation(.easeInOut(duration: 0.45)){
                     Toggle = !Toggle
@@ -18,28 +19,42 @@ struct SliderButton: View {
 
             }label: {
                 ZStack{
-                    RoundedRectangle(cornerRadius: 12)
-                        .frame(width:55,height: 220)
+                    RoundedRectangle(cornerRadius: 30)
+                        .frame(width:35,height: 120)
                         .rotationEffect(.degrees(90))
-                    RoundedRectangle(cornerRadius: 12)
+                        .overlay{
+                            Text(Toggle ? "Manual" : "Auto")
+                                .frame(width: 100)
+                                .foregroundColor(.white)
+                                .font(.caption2)
+                                .offset(x:Toggle ? 30 : -30)
+                        }
+                    RoundedRectangle(cornerRadius: 30)
                         .fill(.white)
-                        .frame(width:45,height: 100)
+                        .frame(width:25,height: 60)
                         .rotationEffect(.degrees(90))
-                        .offset(x: Toggle ? -55 : 55)
+                        .offset(x: Toggle ? -25 : 25)
+                        .overlay{
+                            Text(Toggle ? "Auto" : "Manual")
+                                .frame(width: 100)
+                                .font(.caption2)
+                                .offset(x: Toggle ? -25 : 25)
+                        }
+                        .shadow(color:.black.opacity(0.2),radius: 4)
 
 //                    Circle()
 //                       .fill(.white)
 //                       .frame(width:26)
 
                         
-                }
-            }
-        }
+                }.frame(width:200,height: 100)
+            }.frame(width:200,height: 100)
+        
     }
 }
 
-struct SliderButton_Previews: PreviewProvider {
-    static var previews: some View {
-        SliderButton()
-    }
-}
+//struct SliderButton_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SliderButton()
+//    }
+//}

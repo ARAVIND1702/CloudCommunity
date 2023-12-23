@@ -20,6 +20,7 @@ struct AddEventsView: View {
     
     let dateFormatter = DateFormatter()
     
+
     @AppStorage("user_profile_url") var profileURL: URL?
     @AppStorage("log_status") var userIsLoggedIn:Bool = false
     @AppStorage("user_name") var usernamestored: String = ""
@@ -190,7 +191,12 @@ struct AddEventsView: View {
             }
 
 
-        }.onAppear{dateConverter()}
+        }
+        .onTapGesture {
+                    self.closeKeyboard()
+                    
+                }
+        .onAppear{dateConverter()}
             .overlay{
                 
                     LoadingView(show: $isLoading)

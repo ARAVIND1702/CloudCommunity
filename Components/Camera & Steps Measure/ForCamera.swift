@@ -1,44 +1,57 @@
 import AVFoundation
 
-class CameraViewModel: NSObject, ObservableObject {
-    var session: AVCaptureSession = AVCaptureSession()
+class CameraManager: NSObject, ObservableObject {
+     let session = AVCaptureSession()
 
     override init() {
         super.init()
+        setupCamera()
+    }
 
-        if let device = AVCaptureDevice.default(for: .video) {
-            do {
-                let input = try AVCaptureDeviceInput(device: device)
-                if session.canAddInput(input) {
-                    session.addInput(input)
-                }
+    private func setupCamera() {
+        session.sessionPreset = .high
 
-                let output = AVCaptureVideoDataOutput()
-                if session.canAddOutput(output) {
-                    session.addOutput(output)
-                }
+        guard let captureDevice = AVCaptureDevice.default(for: .video) else {
+            print("Camera not available.")
+            return
+        }
 
-                session.startRunning()
-            } catch {
-                print("Error setting up camera: \(error.localizedDescription)")
+        do {
+            let input = try AVCaptureDeviceInput(device: captureDevice)
+            if session.canAddInput(input) {
+                session.addInput(input)
             }
+
+            let output = AVCaptureVideoDataOutput()
+            output.setSampleBufferDelegate(self, queue: DispatchQueue.global(qos: .userInitiated))
+
+            if session.canAddOutput(output) {
+                session.addOutput(output)
+            }
+        } catch {
+            print("Error setting up camera: \(error.localizedDescription)")
         }
     }
 
-    func checkCameraAuthorization() {
-        switch AVCaptureDevice.authorizationStatus(for: .video) {
-        case .authorized:
-            // Camera access is already granted.
-            break
-        case .notDetermined:
-            // Request camera access.
-            AVCaptureDevice.requestAccess(for: .video) { _ in }
-        case .denied, .restricted:
-            // Camera access is denied or restricted.
-            // Handle this scenario appropriately (e.g., show a prompt to enable camera access in settings).
-            break
-        @unknown default:
-            break
+    func startSession() {
+        if !session.isRunning {
+            session.startRunning()
+        }
+    }
+
+    func stopSession() {
+        if session.isRunning {
+            session.stopRunning()
+        }
+    }
+}
+
+extension CameraManager: AVCaptureVideoDataOutputSampleBufferDelegate {
+    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        // Process the video frame asynchronously on a background queue
+        DispatchQueue.global(qos: .userInitiated).async {
+            // Your frame processing logic goes here
+            // This code is executed on a background queue
         }
     }
 }

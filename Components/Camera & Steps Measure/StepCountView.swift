@@ -1,15 +1,36 @@
-//
-//  StepCountView.swift
-//  CommunityCloud
-//
-//  Created by GGS-BKS on 03/10/23.
-//
-
 import SwiftUI
+import CoreMotion
 
 struct StepCountView: View {
+    let pedometer = CMPedometer()
+    @State private var stepCount: Int = 0
+    @State var Toggle = false
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("Steps: \(stepCount)")
+                .font(.largeTitle)
+                .padding()
+        }
+        .onAppear {
+            startUpdatingSteps()
+        }
+    }
+
+    func startUpdatingSteps() {
+        if CMPedometer.isStepCountingAvailable() {
+            pedometer.startUpdates(from: Date()) { pedometerData, error in
+                if let data = pedometerData {
+                    DispatchQueue.main.async {
+                        self.stepCount = data.numberOfSteps.intValue
+                    }
+                }
+            }
+        } else {
+            // Step counting is not available on this device
+            // Handle the error accordingly
+            print("Step counting not available on this device.")
+        }
     }
 }
 

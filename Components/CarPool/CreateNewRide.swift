@@ -32,135 +32,148 @@ struct CreateNewRide: View {
     @State private var Droplocation = "" // State variable to store location name
 
     var body: some View {
-        VStack {
-            RoundedRectangle(cornerRadius: 12, style: .circular)
-                .foregroundColor(.white) // Set the background color
-                .frame(height: 40) // Adjust the height of the RoundedRectangle
-                .overlay(
-                    HStack{
-                        Circle()
-                            .fill(.green)
-                            .frame(width: 10)
-                            .padding(.leading)
-                        TextField("", text: $Currentlocation, prompt: Text("Your current location").foregroundColor(.black))
-                            .foregroundColor(.black)
-                            .onChange(of: Currentlocation){ newValue in
-                                let geocoder = CLGeocoder()
-                                geocoder.geocodeAddressString(Currentlocation) { placemarks, error in
-                                    if let placemark = placemarks?.first, let location = placemark.location {
-                                        region.center = location.coordinate
-                                        region.span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+        NavigationView{
+            VStack {
+                HStack{
+                    Text("Create a New Ride")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                    Spacer()
+                }.padding(.bottom,50)
+                
+                    
+                RoundedRectangle(cornerRadius: 12, style: .circular)
+                    .foregroundColor(.white) // Set the background color
+                    .frame(height: 40) // Adjust the height of the RoundedRectangle
+                    .overlay(
+                        HStack{
+                            Circle()
+                                .fill(.green)
+                                .frame(width: 10)
+                                .padding(.leading)
+                            TextField("", text: $Currentlocation, prompt: Text("Your current location").foregroundColor(.black))
+                                .foregroundColor(.black)
+                                .onChange(of: Currentlocation){ newValue in
+                                    let geocoder = CLGeocoder()
+                                    geocoder.geocodeAddressString(Currentlocation) { placemarks, error in
+                                        if let placemark = placemarks?.first, let location = placemark.location {
+                                            region.center = location.coordinate
+                                            region.span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+                                        }
                                     }
                                 }
-                            }
-                    }
-                )
-                .padding(.bottom,12)
-                .shadow(color:.black.opacity(0.1) ,radius: 2 ,y:2)
-             
-            Map(coordinateRegion: $region)
-                .frame(height: 180)
-            
-            RoundedRectangle(cornerRadius: 12, style: .circular)
-                .foregroundColor(.white) // Set the background color
-                .frame(height: 40) // Adjust the height of the RoundedRectangle
-                .overlay(
-                    HStack{
-                        Circle()
-                            .fill(.red)
-                            .frame(width: 10)
-                            .padding(.leading)
-                        TextField("", text: $Droplocation, prompt: Text("Enter drop Location").foregroundColor(.black))
+                        }
+                    )
+                    .padding(.bottom,12)
+                    .shadow(color:.black.opacity(0.1) ,radius: 2 ,y:2)
+                
+                Map(coordinateRegion: $region)
+                    .frame(height: 180)
+                
+                RoundedRectangle(cornerRadius: 12, style: .circular)
+                    .foregroundColor(.white) // Set the background color
+                    .frame(height: 40) // Adjust the height of the RoundedRectangle
+                    .overlay(
+                        HStack{
+                            Circle()
+                                .fill(.red)
+                                .frame(width: 10)
+                                .padding(.leading)
+                            TextField("", text: $Droplocation, prompt: Text("Enter drop Location").foregroundColor(.black))
                             
-
-                    }
-                )
-                .padding(.top,12)
-                .shadow(color:.black.opacity(0.1) ,radius: 2 ,y:2)
-            RoundedRectangle(cornerRadius: 12, style: .circular)
-                .foregroundColor(.white) // Set the background color
-                .frame(height: 40) // Adjust the height of the RoundedRectangle
-                .overlay(
-                    HStack{
-                      
-                        Image(systemName: "calendar")
-                            .foregroundColor(.gray)
-                            .padding(.leading)
-                        DatePicker(
+                            
+                        }
+                    )
+                    .padding(.top,12)
+                    .shadow(color:.black.opacity(0.1) ,radius: 2 ,y:2)
+                RoundedRectangle(cornerRadius: 12, style: .circular)
+                    .foregroundColor(.white) // Set the background color
+                    .frame(height: 40) // Adjust the height of the RoundedRectangle
+                    .overlay(
+                        HStack{
+                            
+                            Image(systemName: "calendar")
+                                .foregroundColor(.gray)
+                                .padding(.leading)
+                            DatePicker(
                                 "",
-                                 selection: $date,
-                                 in: dateRange,
-                                 displayedComponents: [.date, .hourAndMinute]
-                                    
+                                selection: $date,
+                                in: dateRange,
+                                displayedComponents: [.date, .hourAndMinute]
+                                
                             )
-
-                        .padding(.trailing,20)
-//                        TextField("Select Date and Time",text: $locationName)
-//                            .foregroundColor(.black)
-//                            .padding(.horizontal,16)
-                    }
-                )
-                .padding(.top,12)
-                .shadow(color:.black.opacity(0.1) ,radius: 2 ,y:2)
-            RoundedRectangle(cornerRadius: 12, style: .circular)
-                .foregroundColor(.white)
-                .frame(height: 40)
-                .overlay(
-                    HStack{
-                        Image(systemName: "person.fill")
-                            .foregroundColor(.gray)
-                            .padding(.leading)
-                        Text("No of seats available")
-                            .foregroundColor(.gray.opacity(0.7))
-                            .padding()
-                        Spacer()
-                        Picker("Seats", selection: $Seat) {
-                            ForEach(Seats, id: \.self) { seat in
-                                Text(String(seat))
-                            }
+                            
+                            .padding(.trailing,20)
+                            //                        TextField("Select Date and Time",text: $locationName)
+                            //                            .foregroundColor(.black)
+                            //                            .padding(.horizontal,16)
                         }
-                        .foregroundColor(.black)
-                        .pickerStyle(.menu)
-                        .tint(.black)
-                        .onAppear {
-                            // Change the appearance of the Picker
-                            UITableView.appearance().separatorColor = .clear // Hides separators
-                            UITableViewCell.appearance().tintColor = .black // Set the chevron color to black
-                        }
-
-
-                    }
-                    
-                )
-                .padding(.top, 12)
-                .shadow(color:.black.opacity(0.1) ,radius: 2 ,y:2)
-
-            Button{
-//                let geocoder = CLGeocoder()
-//                geocoder.geocodeAddressString(Currentlocation) { placemarks, error in
-//                    if let placemark = placemarks?.first, let location = placemark.location {
-//                        region.center = location.coordinate
-//                        region.span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
-//                    }
-//                }
-                createPool()
-                }label: {
-                Text("Save")
-                    .lineLimit(1)
-                    .font(.system(size: 14))
-                    .fontWeight(.bold)
+                    )
+                    .padding(.top,12)
+                    .shadow(color:.black.opacity(0.1) ,radius: 2 ,y:2)
+                RoundedRectangle(cornerRadius: 12, style: .circular)
                     .foregroundColor(.white)
-                    .frame(width: 160)
-                    .padding(.vertical,19)
-                    .padding(.horizontal,90)
-                    .background(
-                        RoundedRectangle(cornerRadius: 10.0)
-                            .fill(Color(red: 0.339, green: 0.396, blue: 0.95))
-                            .shadow(color:.black.opacity(0.1) ,radius: 1 ,y:2)
+                    .frame(height: 40)
+                    .overlay(
+                        HStack{
+                            Image(systemName: "person.fill")
+                                .foregroundColor(.gray)
+                                .padding(.leading)
+                            Text("No of seats available")
+                                .foregroundColor(.gray.opacity(0.7))
+                                .padding()
+                            Spacer()
+                            Picker("Seats", selection: $Seat) {
+                                ForEach(Seats, id: \.self) { seat in
+                                    Text(String(seat))
+                                }
+                            }
+                            .foregroundColor(.black)
+                            .pickerStyle(.menu)
+                            .tint(.black)
+                            .onAppear {
+                                // Change the appearance of the Picker
+                                UITableView.appearance().separatorColor = .clear // Hides separators
+                                UITableViewCell.appearance().tintColor = .black // Set the chevron color to black
+                            }
+                            
+                            
+                        }
                         
                     )
+                    .padding(.top, 12)
+                    .shadow(color:.black.opacity(0.1) ,radius: 2 ,y:2)
+                
+                Button{
+                    //                let geocoder = CLGeocoder()
+                    //                geocoder.geocodeAddressString(Currentlocation) { placemarks, error in
+                    //                    if let placemark = placemarks?.first, let location = placemark.location {
+                    //                        region.center = location.coordinate
+                    //                        region.span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+                    //                    }
+                    //                }
+                    createPool()
+                }label: {
+                    Text("Save")
+                        .lineLimit(1)
+                        .font(.system(size: 14))
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .frame(width: 160)
+                        .padding(.vertical,19)
+                        .padding(.horizontal,95)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10.0)
+                                .fill(Color(red: 0.339, green: 0.396, blue: 0.95))
+                                .shadow(color:.black.opacity(0.1) ,radius: 1 ,y:2)
+                            
+                        )
                 }.padding(.top,12)
+                Spacer()
+                Spacer()
+            }
             
+            .padding()
         }
     }
     
@@ -213,8 +226,9 @@ struct CreateNewRide: View {
 
 
 
-//struct CreateNewRide_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CreateNewRide()
-//    }
-//}
+struct CreateNewRide_Previews: PreviewProvider {
+    static var previews: some View {
+        let show = Binding<Bool>(get: { true }, set: { _ in })
+        return CreateNewRide(Show: show)
+    }
+}

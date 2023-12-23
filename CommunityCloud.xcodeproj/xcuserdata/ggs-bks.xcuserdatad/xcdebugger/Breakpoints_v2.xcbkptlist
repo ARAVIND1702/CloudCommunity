@@ -187,6 +187,51 @@
                   endingLineNumber = "87"
                   offsetFromSymbolStart = "104">
                </Location>
+               <Location
+                  uuid = "2AF29F4D-B7C6-4ECB-94FD-D5711F698758 - 1a0f9c8550c18a5c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in CommunityCloud.ProfileView.deleteAccount() -&gt; ()"
+                  moduleName = "CommunityCloud"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ggs-bks/Desktop/Projects/CommunityCloud/Views/ProfileView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "2AF29F4D-B7C6-4ECB-94FD-D5711F698758 - 4d6b6161fd38ce5e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in CommunityCloud.ProfileView.deleteAccount() -&gt; ()"
+                  moduleName = "CommunityCloud"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ggs-bks/Desktop/Projects/CommunityCloud/Views/ProfileView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "380">
+               </Location>
+               <Location
+                  uuid = "2AF29F4D-B7C6-4ECB-94FD-D5711F698758 - 70c8cb4d87120240"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for closure #1 @Sendable () async -&gt; () in CommunityCloud.ProfileView.deleteAccount() -&gt; ()"
+                  moduleName = "CommunityCloud"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ggs-bks/Desktop/Projects/CommunityCloud/Views/ProfileView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "84">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -279,6 +324,36 @@
                   startingLineNumber = "63"
                   endingLineNumber = "63"
                   offsetFromSymbolStart = "322">
+               </Location>
+               <Location
+                  uuid = "D095CC39-D3D5-47E6-92EF-D5B019DAB735 - 3fda96520a11a641"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in closure #1 (CommunityCloud.CarPool) -&gt; CommunityCloud.CarPoolCard in CommunityCloud.otherRides.CarPools() -&gt; some"
+                  moduleName = "CommunityCloud"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ggs-bks/Desktop/Projects/CommunityCloud/Components/CarPool/otherRides.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "320">
+               </Location>
+               <Location
+                  uuid = "D095CC39-D3D5-47E6-92EF-D5B019DAB735 - 3e10267f17c81f53"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #2 () -&gt; () in closure #1 (CommunityCloud.CarPool) -&gt; CommunityCloud.CarPoolCard in CommunityCloud.otherRides.CarPools() -&gt; some"
+                  moduleName = "CommunityCloud"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ggs-bks/Desktop/Projects/CommunityCloud/Components/CarPool/otherRides.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "148">
                </Location>
             </Locations>
          </BreakpointContent>

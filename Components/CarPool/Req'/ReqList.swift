@@ -104,7 +104,7 @@ struct ReqList: View {
                         }
                     
                     }
-                    print(fetchedPosts[1].Waiting.count)
+                    //print(fetchedPosts[1].Waiting.count)
                     
                     isFetching = false
                 })

@@ -39,7 +39,7 @@ struct PopUpForWayFinder: View {
                                 .foregroundColor(.gray.opacity(0.7))
                                 .padding()
                             Spacer()
-                            Picker("Current", selection:$Current) {
+                            Picker("Budapest", selection:$Current) {
                                 ForEach(MeetingRooms, id: \.self) { category in
                                     Text(category)
                                 }

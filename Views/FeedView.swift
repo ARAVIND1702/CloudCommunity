@@ -13,10 +13,10 @@ struct FeedView: View {
     @State private var recentsPosts: [Post] = []
     @State private var createNewPost : Bool = false
     @State var postTextForTrigger: String = ""
-    @State var showingCredits: Bool = true
 
     @FocusState private var isViewVisible : Bool
-
+    
+    @AppStorage("hide") var hide: Bool = false
     @AppStorage("user_profile_url") var profileURL: URL?
     @AppStorage("user_name") var usernamestored: String = ""
     
@@ -63,10 +63,9 @@ struct FeedView: View {
             Spacer()
             ReusablePostsView(posts: $recentsPosts)
         }
-        .sheet(isPresented: $showingCredits) {
-                    Text("This app was brought to you by Hacking with Swift")
-                        .presentationDetents([.medium, .large])
-                }
+        .onAppear{
+         hide = false
+        }
         .fullScreenCover(isPresented: $createNewPost){
             CreatePost{ post in
                 recentsPosts.insert(post, at: 0)
@@ -102,8 +101,18 @@ struct FeedView: View {
                             .background(Circle().fill(Color(red: 0.339, green: 0.396, blue: 0.95)
 ))
                             .offset(x: -16, y: -8)
+                    NavigationLink{
+                     MoreView().navigationBarBackButtonHidden(false)
+                    }label: {
+                        Image(systemName: "map")
+                            .font(.system(size: 15))
+                            .fontWeight(.bold)
+                            .tint(.black)
+                            
+                    }
                 }
             }
+            
         }
         .background(Color(red: 0.973, green: 0.972, blue: 0.981))
         
