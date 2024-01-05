@@ -19,7 +19,7 @@ struct CreateNewRide: View {
     let dateRange: ClosedRange<Date> = {
          let calendar = Calendar.current
          let today = calendar.startOfDay(for: Date())
-         let endComponents = DateComponents(year: 2023, month: 12, day: 31, hour: 23, minute: 59, second: 59)
+         let endComponents = DateComponents(year: 2024, month: 12, day: 31, hour: 23, minute: 59, second: 59)
          return today ... calendar.date(from: endComponents)!
      }()
 
@@ -184,7 +184,7 @@ struct CreateNewRide: View {
             do{
                 //guard let profileURL = profileURL else { return }    ////////////////////URL  add when you are adding dp pic for every account //by ARAVIND RM
                 
-                let carpool = CarPool(CurrentLocation: Currentlocation, DropLocation: Droplocation, NoofSeats: Seat, userProfileURL: profileURL ?? URL(string: "ASDasdas")!, userName: usernamestored, userUID: userUID)
+                let carpool = CarPool(CurrentLocation: Currentlocation, DropLocation: Droplocation,OnDateofTravel: date, NoofSeats: Seat, userProfileURL: profileURL ?? URL(string: "ASDasdas")!, userName: usernamestored, userUID: userUID)
                 try await createDocumentAtFireBase(carpool)
                 
             }

@@ -306,6 +306,9 @@ struct CreatePost: View {
             }
             
         }
+        .onTapGesture {
+                    self.closeKeyboard()
+                }
         .background(Color(red: 0.9725490196078431, green: 0.9803921568627451, blue: 0.981))
         .photosPicker(isPresented: $showImagePicker, selection: $photoItem)
         .overlay{

@@ -11,13 +11,13 @@ func getBotResponse(message:String) -> String{
     let tempMessage = message.lowercased()
     
     if tempMessage.contains("hello"){
-        return "Hey there!"
+        return "Hey there! How can i help you"
     } else if tempMessage.contains("goodbye"){
         return "Talk you later!"
-    } else if tempMessage.contains("how are you"){
-        return "Im'fine, how about you?"
+    } else if tempMessage.contains("upcoming holiday"){
+        return "Its is on 15 Jan 2024 for Pongal"
     }
-    else if tempMessage.contains("how do download my pay for the month of may 2023."){
+    else if tempMessage.contains("how to download my pay slip"){
         return """
         HGS Payslip on HGS ESS App
         
@@ -43,6 +43,6 @@ func getBotResponse(message:String) -> String{
     else if tempMessage.contains("how are you"){
         return "Im'fine, how about you?"
     } else {
-        return "That's cool"
+        return "Sorry Im'not trained for that"
     }
 }

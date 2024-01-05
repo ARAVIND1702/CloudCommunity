@@ -48,6 +48,7 @@ struct otherRides: View {
     @ViewBuilder
     func CarPools()-> some View{
         ForEach(carpools){carpool in
+            
             CarPoolCard(carpool: carpool, basedonUId: basedonUId){updatedCarPool in
                 withAnimation(.easeInOut(duration: 0.25)){
                     
@@ -127,7 +128,7 @@ struct otherRides: View {
         }
     }
 
-    
+   
 }
 
 struct otherRides_Previews: PreviewProvider {

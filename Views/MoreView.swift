@@ -20,13 +20,13 @@ struct MoreView: View {
             
                 VStack(alignment: .leading){
                     HStack{
-                        Text("Wayfinder")
+                        Text("")
                             .font(.title3)
                         Spacer()
-                    }
-                    .padding()
-                    Text("Explore your work space to get a better experience of \ncafeteria, meeting rooms, entry/exit points, play area,  work stations, etc...")
-                        .frame(height: 60)
+                    }.padding(.top,10)
+                        .padding(.horizontal)
+                    Text("Explore your work space to get a better experience of \ncafeteria, meeting rooms, entry/exit points, play area,\nwork stations, etc...")
+                        .frame( height: 70)
                         .padding(.horizontal)
                         .foregroundColor(.gray)
                         .font(.footnote)
@@ -168,6 +168,9 @@ struct MoreView: View {
                     }
                     Spacer()
                     Spacer()
+                    Spacer()
+                    Spacer()
+
                 }
 //                .toolbar{
 //                    ToolbarItem(placement: .navigationBarLeading){
@@ -204,7 +207,7 @@ struct MoreView: View {
 //                }
                 
                 
-            }
+        }.navigationTitle(Text("Wayfinder"))
             
         }
     }

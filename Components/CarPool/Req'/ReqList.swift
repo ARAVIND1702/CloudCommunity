@@ -56,16 +56,17 @@ struct ReqList: View {
     @ViewBuilder
     func Posts() -> some View {
         VStack { // Use a container view, such as VStack
+            var hasNonEmptyWaitingList = false
             ForEach(pools, id: \.id) { pool in
                 if(!pool.Waiting.isEmpty){
                     ReqCard(pool:pool){updatedCarPool in
                         withAnimation(.easeInOut(duration: 0.25)){
-                            
                             if let index = pools.firstIndex(where: { carpool in
                                 carpool.id == updatedCarPool.id
                                 
                             }){
                                 pools[index].Waiting = updatedCarPool.Waiting
+
                             }
                             
                         }
@@ -80,8 +81,13 @@ struct ReqList: View {
                     Text("No Request Found")
                         .font(.callout)
                         .foregroundColor(.gray)
-                }
+                     }
             }
+//            if !hasNonEmptyWaitingList {
+//                    Text("No Request Found")
+//                        .font(.callout)
+//                        .foregroundColor(.gray)
+//                }
         }
     }
 

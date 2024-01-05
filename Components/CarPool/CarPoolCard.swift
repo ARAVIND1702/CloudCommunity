@@ -275,8 +275,8 @@ struct CarPoolCard: View {
         .padding()
         .onAppear(){
             
-            timeConverter()
             Task{
+                await timeConverter()
                 guard let carpoolID = carpool.id else {return}
                 if carpool.Waiting.contains(userUID){
                     ReqBtn = "Cancel Request"
@@ -306,11 +306,23 @@ struct CarPoolCard: View {
 
     }
     
-    func timeConverter(){
+    func timeConverter() async{
        let dateFormatter = DateFormatter()
        dateFormatter.dateFormat = "dd MMM yyyy HH:mm"
         fromtime = dateFormatter.string(from: carpool.OnDateofTravel)
-       
+        let currentDate = Date()
+        var currentTime = dateFormatter.string(from: currentDate)
+        if carpool.OnDateofTravel < currentDate {
+            // `fromtime` is in the past
+            guard let CarPoolID = carpool.id else { return }
+                    do {
+                        try await Firestore.firestore().collection("CarPools").document(CarPoolID).delete()
+                    } catch {
+                        print("Error deleting document: \(error.localizedDescription)")
+                    }
+            
+            
+        }
    }
     func Joined(){
         Task{

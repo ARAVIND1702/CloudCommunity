@@ -73,6 +73,7 @@
 		81F615672A8E21CD00668EB3 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F615662A8E21CD00668EB3 /* LoadingView.swift */; };
 		81F615722A8F8A8600668EB3 /* ReusablePostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F615712A8F8A8600668EB3 /* ReusablePostsView.swift */; };
 		81F615742A932B8C00668EB3 /* PostCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F615732A932B8C00668EB3 /* PostCardView.swift */; };
+		97414D5A2B388DD9000AB2C8 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97414D592B388DD9000AB2C8 /* SplashScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -138,6 +139,7 @@
 		81F615662A8E21CD00668EB3 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		81F615712A8F8A8600668EB3 /* ReusablePostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusablePostsView.swift; sourceTree = "<group>"; };
 		81F615732A932B8C00668EB3 /* PostCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCardView.swift; sourceTree = "<group>"; };
+		97414D592B388DD9000AB2C8 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,6 +306,7 @@
 				81F6155A2A8CC66700668EB3 /* ProfileView.swift */,
 				81800D912AA1ABDC008DD56D /* SearchView.swift */,
 				8159C5C02ABC3ED70068AC9D /* MoreView.swift */,
+				97414D592B388DD9000AB2C8 /* SplashScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				81F615272A8A021C00668EB3 /* ContentView.swift in Sources */,
 				8159C5AD2AB1ADB30068AC9D /* ReqCard.swift in Sources */,
 				81F6155E2A8CD27B00668EB3 /* ReusableProfileContent.swift in Sources */,
+				97414D5A2B388DD9000AB2C8 /* SplashScreen.swift in Sources */,
 				8159C5C12ABC3ED70068AC9D /* MoreView.swift in Sources */,
 				81800D942AA1F0A4008DD56D /* AddEventsView.swift in Sources */,
 				8159C5B42AB1BFF80068AC9D /* ReqList.swift in Sources */,
@@ -624,7 +628,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CommunityCloud/Preview Content\"";
-				DEVELOPMENT_TEAM = 99R99D8GJR;
+				DEVELOPMENT_TEAM = TZ44R34A5X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CommunityCloud/Info.plist;
@@ -656,7 +660,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CommunityCloud/Preview Content\"";
-				DEVELOPMENT_TEAM = 99R99D8GJR;
+				DEVELOPMENT_TEAM = TZ44R34A5X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CommunityCloud/Info.plist;

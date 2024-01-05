@@ -85,11 +85,15 @@ struct FeedView: View {
                     NavigationLink{
                         SearchView()
                     }label: {
-                        Image(systemName: "magnifyingglass")
-                            .font(.system(size: 15))
-                            .fontWeight(.bold)
-                            .padding(.horizontal)
-                            .tint(.black)
+                        
+                            Image(systemName: "magnifyingglass")
+                                .font(.system(size: 15))
+                                .fontWeight(.bold)
+                                .padding(.horizontal)
+                                .tint(.black)
+                           
+                        
+                        
                     }
                     Image(systemName: "bell.fill")
                         .font(.system(size: 15))
@@ -104,12 +108,18 @@ struct FeedView: View {
                     NavigationLink{
                      MoreView().navigationBarBackButtonHidden(false)
                     }label: {
-                        Image(systemName: "map")
-                            .font(.system(size: 15))
-                            .fontWeight(.bold)
-                            .tint(.black)
-                            
+                          ZStack {
+                            Circle()
+                                .size(width: 35, height: 35)
+                                .offset(x:-5,y:-6)
+                            Image(systemName: "map")
+                                .font(.system(size: 15))
+                                .fontWeight(.medium)
+                                .tint(.white)
+                                .shadow(radius: 4)
+                        }
                     }
+                    
                 }
             }
             
