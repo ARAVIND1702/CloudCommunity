@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct Home: View {
+    @AppStorage("hide") var hide: Bool = false
+
     @State private var tabSelection = 1
     init() {
         // Customize the appearance of the UITabBar
@@ -21,25 +23,27 @@ struct Home: View {
         UITabBar.appearance().scrollEdgeAppearance = appearance
     }
     var body: some View {
-        TabView(selection: $tabSelection){
-            FeedView()
-                .tag(1)
-            Events()
-                .tag(2)
-
-            ChatView()
-                .tag(3)
-
-            CarrPoolView()
-                .tag(4)
-
-            ProfileView()
-                .tag(5)
-
-        }
-        .overlay(alignment:.bottom){
-            CustomTabView(tabSelection: $tabSelection)
-        }
+            TabView(selection: $tabSelection){
+                FeedView()
+                    .tag(1)
+                CommunityView()
+                    .tag(2)
+                
+                ClassifiedView()
+                    .tag(3)
+                
+                CarrPoolView()
+                    .tag(4)
+                
+                ProfileView()
+                    .tag(5)
+                
+            }
+            .overlay(alignment:.bottom){
+                CustomTabView(tabSelection: $tabSelection)
+            }
+        
+       
     }
 }
 struct Home_Previews: PreviewProvider {

@@ -1,22 +1,23 @@
 //
-//  btn.swift
+//  BtnForCommunity.swift
 //  CommunityCloud
 //
-//  Created by GGS-BKS on 21/09/23.
+//  Created by ARAVIND RM on 07/01/24.
 //
 
 import SwiftUI
 
-struct btn: View {
+struct BtnForCommunity: View {
     @State var No : String
     @State var Name : String
     @State var Thubnail : String
-    var body: some View {
     
+    var body: some View {
         VStack(alignment: .leading,spacing: 0){
             HStack{
                 Text(No)
-                    .padding(.leading,70)
+                    .padding(.leading,65)
+                    .font(.caption)
                     .foregroundColor(.gray)
             }
             Image(systemName: Thubnail)
@@ -27,7 +28,7 @@ struct btn: View {
                 .clipShape(Circle())
                 .shadow(radius: 4,y:4)
             Text(Name)
-                .font(.caption2)
+                .font(.caption)
                 .foregroundColor(.black)
                 .multilineTextAlignment(.leading)
                 .padding(.top,10)
@@ -40,8 +41,6 @@ struct btn: View {
     }
 }
 
-struct btn_Previews: PreviewProvider {
-    static var previews: some View {
-        btn(No: "24", Name: "Meeting Room", Thubnail: "message.and.waveform.fill")
-    }
+#Preview {
+    BtnForCommunity(No: "24", Name: "Meeting Room", Thubnail: "message.and.waveform.fill")
 }

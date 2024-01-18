@@ -11,6 +11,7 @@ import SwiftUI
 
 struct Post:Identifiable,Codable,Equatable,Hashable {
     @DocumentID var id: String?
+    var community : String 
     var text : String
     var imageURl:URL?
     var imageRefernceID: String = ""
@@ -24,6 +25,7 @@ struct Post:Identifiable,Codable,Equatable,Hashable {
     var userProfileURL : URL?// add when you are adding dp pic for every account //by ARAVIND RM
     
     enum CodingKeys: String, CodingKey {
+        case community
         case id
         case text
         case imageURl // Corrected property name here

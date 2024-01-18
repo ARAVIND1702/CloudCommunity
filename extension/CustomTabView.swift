@@ -16,8 +16,8 @@ struct CustomTabView: View {
     
     let tabItems:[(image:String,title:String)] = [
         ("house.fill","Home"),
-        ("calendar","Events"),
-        ("message.fill","Office Buddy"),
+        ("person.2.fill","Communities"),
+        ("newspaper.fill","Classified"),
         ("car.fill","Car Pool"),
         ("person.fill","My profile")
 

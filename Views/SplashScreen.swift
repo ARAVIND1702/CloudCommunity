@@ -9,7 +9,8 @@ import SwiftUI
 
 struct SplashScreen: View {
     @State var isActive: Bool = false
-        
+    @AppStorage("hide") var hide: Bool = false
+
         var body: some View {
             ZStack {
                 if self.isActive {

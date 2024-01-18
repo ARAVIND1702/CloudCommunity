@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7627BEDF2B502DBD0055F5C4 /* CreateClassifiedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7627BEDE2B502DBD0055F5C4 /* CreateClassifiedView.swift */; };
+		76290BDA2B4D93FC0043FB1F /* ClassifiedCardUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76290BD92B4D93FC0043FB1F /* ClassifiedCardUI.swift */; };
+		7685BEDB2B4EEE9A00D155B0 /* ClassifiedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7685BEDA2B4EEE9A00D155B0 /* ClassifiedView.swift */; };
+		7685BEDD2B4F0CDE00D155B0 /* ClassifiedLandingUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7685BEDC2B4F0CDE00D155B0 /* ClassifiedLandingUI.swift */; };
+		7685BEE12B4FA6A800D155B0 /* AdsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7685BEE02B4FA6A800D155B0 /* AdsView.swift */; };
+		7685BEE32B4FA6C100D155B0 /* YourAdsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7685BEE22B4FA6C100D155B0 /* YourAdsView.swift */; };
+		7685BEE72B4FA81900D155B0 /* InterestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7685BEE62B4FA81900D155B0 /* InterestView.swift */; };
+		7685BEE92B4FAE8900D155B0 /* Classified.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7685BEE82B4FAE8900D155B0 /* Classified.swift */; };
+		76AA524F2B5391100045B2EF /* ClassifiedDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AA524E2B5391100045B2EF /* ClassifiedDetailView.swift */; };
+		76AA52512B54E3650045B2EF /* ClassifiedReqCardUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AA52502B54E3650045B2EF /* ClassifiedReqCardUI.swift */; };
+		76AA52542B54F0110045B2EF /* ClassifiedReqBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AA52532B54F0110045B2EF /* ClassifiedReqBridge.swift */; };
+		76AA52562B54F1BC0045B2EF /* ClassifiedReqSplitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AA52552B54F1BC0045B2EF /* ClassifiedReqSplitter.swift */; };
+		76B72E542B581E8900774EF8 /* ClassifiedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B72E532B581E8900774EF8 /* ClassifiedCard.swift */; };
+		76E8B0F02B49AEB10030D765 /* CommunityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E8B0EF2B49AEB10030D765 /* CommunityView.swift */; };
+		76E8B0F22B49B7470030D765 /* CommunityRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E8B0F12B49B7470030D765 /* CommunityRoomView.swift */; };
+		76E8B0F42B4AAF930030D765 /* BtnForCommunity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E8B0F32B4AAF930030D765 /* BtnForCommunity.swift */; };
+		76E8B0F82B4BC89E0030D765 /* PostCardViewForCommunity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E8B0F72B4BC89E0030D765 /* PostCardViewForCommunity.swift */; };
+		76E8B0FA2B4BCA010030D765 /* CommunityIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E8B0F92B4BCA010030D765 /* CommunityIcon.swift */; };
 		810CDC9C2AA5DACC0028276C /* EventsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810CDC9B2AA5DACC0028276C /* EventsListView.swift */; };
 		812955A42AC3F1910006F80C /* SliderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812955A32AC3F1910006F80C /* SliderButton.swift */; };
 		812955A62AC4088A0006F80C /* Wayfinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812955A52AC4088A0006F80C /* Wayfinder.swift */; };
@@ -77,6 +95,24 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7627BEDE2B502DBD0055F5C4 /* CreateClassifiedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClassifiedView.swift; sourceTree = "<group>"; };
+		76290BD92B4D93FC0043FB1F /* ClassifiedCardUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedCardUI.swift; sourceTree = "<group>"; };
+		7685BEDA2B4EEE9A00D155B0 /* ClassifiedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedView.swift; sourceTree = "<group>"; };
+		7685BEDC2B4F0CDE00D155B0 /* ClassifiedLandingUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedLandingUI.swift; sourceTree = "<group>"; };
+		7685BEE02B4FA6A800D155B0 /* AdsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsView.swift; sourceTree = "<group>"; };
+		7685BEE22B4FA6C100D155B0 /* YourAdsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourAdsView.swift; sourceTree = "<group>"; };
+		7685BEE62B4FA81900D155B0 /* InterestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestView.swift; sourceTree = "<group>"; };
+		7685BEE82B4FAE8900D155B0 /* Classified.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classified.swift; sourceTree = "<group>"; };
+		76AA524E2B5391100045B2EF /* ClassifiedDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedDetailView.swift; sourceTree = "<group>"; };
+		76AA52502B54E3650045B2EF /* ClassifiedReqCardUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedReqCardUI.swift; sourceTree = "<group>"; };
+		76AA52532B54F0110045B2EF /* ClassifiedReqBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedReqBridge.swift; sourceTree = "<group>"; };
+		76AA52552B54F1BC0045B2EF /* ClassifiedReqSplitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedReqSplitter.swift; sourceTree = "<group>"; };
+		76B72E532B581E8900774EF8 /* ClassifiedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifiedCard.swift; sourceTree = "<group>"; };
+		76E8B0EF2B49AEB10030D765 /* CommunityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityView.swift; sourceTree = "<group>"; };
+		76E8B0F12B49B7470030D765 /* CommunityRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityRoomView.swift; sourceTree = "<group>"; };
+		76E8B0F32B4AAF930030D765 /* BtnForCommunity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnForCommunity.swift; sourceTree = "<group>"; };
+		76E8B0F72B4BC89E0030D765 /* PostCardViewForCommunity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCardViewForCommunity.swift; sourceTree = "<group>"; };
+		76E8B0F92B4BCA010030D765 /* CommunityIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityIcon.swift; sourceTree = "<group>"; };
 		810CDC9B2AA5DACC0028276C /* EventsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListView.swift; sourceTree = "<group>"; };
 		812955A32AC3F1910006F80C /* SliderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderButton.swift; sourceTree = "<group>"; };
 		812955A52AC4088A0006F80C /* Wayfinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wayfinder.swift; sourceTree = "<group>"; };
@@ -159,6 +195,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		76290BD82B4D93D30043FB1F /* Classifieds */ = {
+			isa = PBXGroup;
+			children = (
+				7685BEDF2B4FA67C00D155B0 /* ClassifiedsViews */,
+			);
+			path = Classifieds;
+			sourceTree = "<group>";
+		};
+		7685BEDE2B4FA64100D155B0 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				76290BD92B4D93FC0043FB1F /* ClassifiedCardUI.swift */,
+				76AA524E2B5391100045B2EF /* ClassifiedDetailView.swift */,
+				76AA52502B54E3650045B2EF /* ClassifiedReqCardUI.swift */,
+				76B72E532B581E8900774EF8 /* ClassifiedCard.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		7685BEDF2B4FA67C00D155B0 /* ClassifiedsViews */ = {
+			isa = PBXGroup;
+			children = (
+				76AA52522B54EFE90045B2EF /* ClassifiedReqFeature */,
+				7685BEE02B4FA6A800D155B0 /* AdsView.swift */,
+				7685BEE62B4FA81900D155B0 /* InterestView.swift */,
+				7685BEE22B4FA6C100D155B0 /* YourAdsView.swift */,
+				7685BEDC2B4F0CDE00D155B0 /* ClassifiedLandingUI.swift */,
+				7627BEDE2B502DBD0055F5C4 /* CreateClassifiedView.swift */,
+				7685BEDE2B4FA64100D155B0 /* UI */,
+			);
+			path = ClassifiedsViews;
+			sourceTree = "<group>";
+		};
+		76AA52522B54EFE90045B2EF /* ClassifiedReqFeature */ = {
+			isa = PBXGroup;
+			children = (
+				76AA52532B54F0110045B2EF /* ClassifiedReqBridge.swift */,
+				76AA52552B54F1BC0045B2EF /* ClassifiedReqSplitter.swift */,
+			);
+			path = ClassifiedReqFeature;
+			sourceTree = "<group>";
+		};
+		76E8B0EE2B49ACAF0030D765 /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				76E8B0F12B49B7470030D765 /* CommunityRoomView.swift */,
+				76E8B0F32B4AAF930030D765 /* BtnForCommunity.swift */,
+				76E8B0F92B4BCA010030D765 /* CommunityIcon.swift */,
+			);
+			path = Community;
+			sourceTree = "<group>";
+		};
 		812955A72AC40A3B0006F80C /* WayFinder */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +323,7 @@
 				81F615712A8F8A8600668EB3 /* ReusablePostsView.swift */,
 				81F615732A932B8C00668EB3 /* PostCardView.swift */,
 				81F615622A8CEA1E00668EB3 /* CreatePost.swift */,
+				76E8B0F72B4BC89E0030D765 /* PostCardViewForCommunity.swift */,
 			);
 			path = forPost;
 			sourceTree = "<group>";
@@ -307,6 +396,8 @@
 				81800D912AA1ABDC008DD56D /* SearchView.swift */,
 				8159C5C02ABC3ED70068AC9D /* MoreView.swift */,
 				97414D592B388DD9000AB2C8 /* SplashScreen.swift */,
+				76E8B0EF2B49AEB10030D765 /* CommunityView.swift */,
+				7685BEDA2B4EEE9A00D155B0 /* ClassifiedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -323,11 +414,11 @@
 			children = (
 				81F615552A8CA4A200668EB3 /* User.swift */,
 				81F615642A8CEA5500668EB3 /* Post.swift */,
-				81F1CDC82A96178A00A8C625 /* CustomTabView.swift */,
 				81F1CDCE2A9C974200A8C625 /* CalenderView.swift */,
 				81F1CDD52A9CAF9C00A8C625 /* EventCard.swift */,
 				8159C5A82AB188380068AC9D /* CarPool.swift */,
 				812955A52AC4088A0006F80C /* Wayfinder.swift */,
+				7685BEE82B4FAE8900D155B0 /* Classified.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -335,6 +426,7 @@
 		81F615572A8CB3DB00668EB3 /* extension */ = {
 			isa = PBXGroup;
 			children = (
+				81F1CDC82A96178A00A8C625 /* CustomTabView.swift */,
 				81F615582A8CB3F600668EB3 /* File.swift */,
 			);
 			path = extension;
@@ -343,6 +435,8 @@
 		81F6155C2A8CD26200668EB3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				76290BD82B4D93D30043FB1F /* Classifieds */,
+				76E8B0EE2B49ACAF0030D765 /* Community */,
 				812955A32AC3F1910006F80C /* SliderButton.swift */,
 				812955C42ACD75930006F80C /* RoundedButtons.swift */,
 				812955BB2ACC0C920006F80C /* Camera & Steps Measure */,
@@ -442,12 +536,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7627BEDF2B502DBD0055F5C4 /* CreateClassifiedView.swift in Sources */,
 				81F615742A932B8C00668EB3 /* PostCardView.swift in Sources */,
 				810CDC9C2AA5DACC0028276C /* EventsListView.swift in Sources */,
 				8156DB382ACE9864006E8412 /* RouteMap.swift in Sources */,
 				8159C5A92AB188380068AC9D /* CarPool.swift in Sources */,
 				81F615392A8A02A600668EB3 /* LoginView.swift in Sources */,
 				81F615422A8A32A200668EB3 /* SignUp.swift in Sources */,
+				7685BEDD2B4F0CDE00D155B0 /* ClassifiedLandingUI.swift in Sources */,
 				812955AB2AC42E5D0006F80C /* PopUpForWayFinder.swift in Sources */,
 				81F615442A8A459E00668EB3 /* Home.swift in Sources */,
 				8159C5CA2ABD94940068AC9D /* RoomCardSmall.swift in Sources */,
@@ -463,40 +559,56 @@
 				81800D942AA1F0A4008DD56D /* AddEventsView.swift in Sources */,
 				8159C5B42AB1BFF80068AC9D /* ReqList.swift in Sources */,
 				81F615722A8F8A8600668EB3 /* ReusablePostsView.swift in Sources */,
+				7685BEDB2B4EEE9A00D155B0 /* ClassifiedView.swift in Sources */,
 				81F615672A8E21CD00668EB3 /* LoadingView.swift in Sources */,
 				81F6155B2A8CC66700668EB3 /* ProfileView.swift in Sources */,
 				812955A42AC3F1910006F80C /* SliderButton.swift in Sources */,
 				812955C32ACC36F50006F80C /* StepCountView.swift in Sources */,
 				81F6154A2A8C955100668EB3 /* ChatView.swift in Sources */,
 				81F615632A8CEA1E00668EB3 /* CreatePost.swift in Sources */,
+				76AA524F2B5391100045B2EF /* ClassifiedDetailView.swift in Sources */,
+				76E8B0F42B4AAF930030D765 /* BtnForCommunity.swift in Sources */,
 				8159C5BD2AB473950068AC9D /* BotResponse.swift in Sources */,
 				812955B52AC5582D0006F80C /* RouteArray.swift in Sources */,
 				8159C5B82AB2FC3A0068AC9D /* ReqCardItem.swift in Sources */,
 				81F615482A8C950F00668EB3 /* Events.swift in Sources */,
 				812955B92ACC07020006F80C /* CameraView.swift in Sources */,
+				7685BEE72B4FA81900D155B0 /* InterestView.swift in Sources */,
 				81800D922AA1ABDC008DD56D /* SearchView.swift in Sources */,
 				81F615652A8CEA5500668EB3 /* Post.swift in Sources */,
+				7685BEE92B4FAE8900D155B0 /* Classified.swift in Sources */,
+				76E8B0FA2B4BCA010030D765 /* CommunityIcon.swift in Sources */,
 				812955A62AC4088A0006F80C /* Wayfinder.swift in Sources */,
 				81F1CDD62A9CAF9C00A8C625 /* EventCard.swift in Sources */,
 				812955A92AC40A580006F80C /* WayFinderView.swift in Sources */,
+				76E8B0F22B49B7470030D765 /* CommunityRoomView.swift in Sources */,
 				812955BF2ACC1D560006F80C /* GifImage.swift in Sources */,
+				76E8B0F82B4BC89E0030D765 /* PostCardViewForCommunity.swift in Sources */,
+				7685BEE32B4FA6C100D155B0 /* YourAdsView.swift in Sources */,
+				76290BDA2B4D93FC0043FB1F /* ClassifiedCardUI.swift in Sources */,
+				76E8B0F02B49AEB10030D765 /* CommunityView.swift in Sources */,
 				8159C5CC2AC15AAD0068AC9D /* ExtenededRoomView.swift in Sources */,
 				812955C52ACD75930006F80C /* RoundedButtons.swift in Sources */,
 				81F615462A8C945B00668EB3 /* FeedView.swift in Sources */,
 				817A1C502AA9D6B0001DDF89 /* CarPooLanding.swift in Sources */,
 				8159C5C42ABC45280068AC9D /* btn.swift in Sources */,
+				76AA52542B54F0110045B2EF /* ClassifiedReqBridge.swift in Sources */,
 				8159C5BF2AB82C4B0068AC9D /* ChatBalloon.swift in Sources */,
 				81F6154E2A8C958B00668EB3 /* CarrPoolView.swift in Sources */,
 				81F615562A8CA4A200668EB3 /* User.swift in Sources */,
+				76B72E542B581E8900774EF8 /* ClassifiedCard.swift in Sources */,
 				8159C5C82ABD883A0068AC9D /* RoomView.swift in Sources */,
 				81F615592A8CB3F600668EB3 /* File.swift in Sources */,
 				81F1CDCF2A9C974200A8C625 /* CalenderView.swift in Sources */,
 				8159C5AB2AB18F4F0068AC9D /* otherRides.swift in Sources */,
+				7685BEE12B4FA6A800D155B0 /* AdsView.swift in Sources */,
+				76AA52512B54E3650045B2EF /* ClassifiedReqCardUI.swift in Sources */,
 				812955BD2ACC0CB20006F80C /* CameraPreview.swift in Sources */,
 				8159C5C62ABD6C600068AC9D /* RoomCards.swift in Sources */,
 				812955B72ACC06D70006F80C /* ForCamera.swift in Sources */,
 				81F1CDD22A9C9DBB00A8C625 /* ReusableEventsCardView.swift in Sources */,
 				81F615252A8A021C00668EB3 /* CommunityCloudApp.swift in Sources */,
+				76AA52562B54F1BC0045B2EF /* ClassifiedReqSplitter.swift in Sources */,
 				817A1C542AAB02A8001DDF89 /* CreateNewRide.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,7 +15,10 @@ struct FeedView: View {
     @State var postTextForTrigger: String = ""
 
     @FocusState private var isViewVisible : Bool
-    
+    @State  var isMenuOn : Bool = false
+    @State  var isWish : Bool = false
+
+    @State var isShaking : Bool =  true
     @AppStorage("hide") var hide: Bool = false
     @AppStorage("user_profile_url") var profileURL: URL?
     @AppStorage("user_name") var usernamestored: String = ""
@@ -50,7 +53,7 @@ struct FeedView: View {
                                     
 //                                    .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in
 //                                        createNewPost = false
-//                                    }
+            //                                    }
                  
 
 
@@ -71,12 +74,12 @@ struct FeedView: View {
                 recentsPosts.insert(post, at: 0)
             }
         }
-        .toolbar{
+      .toolbar{
             ToolbarItem(placement: .navigationBarLeading){
                 HStack{
                     Text("Welcome,")
                     Text(usernamestored)
-                        .fontWeight(.bold)
+                        .fontWeight(.light)
                 }
                 
             }
@@ -105,28 +108,190 @@ struct FeedView: View {
                             .background(Circle().fill(Color(red: 0.339, green: 0.396, blue: 0.95)
 ))
                             .offset(x: -16, y: -8)
-                    NavigationLink{
-                     MoreView().navigationBarBackButtonHidden(false)
-                    }label: {
-                          ZStack {
-                            Circle()
-                                .size(width: 35, height: 35)
-                                .offset(x:-5,y:-6)
-                            Image(systemName: "map")
-                                .font(.system(size: 15))
-                                .fontWeight(.medium)
-                                .tint(.white)
-                                .shadow(radius: 4)
+                    Button{
+                        withAnimation(.easeInOut(duration: 0.45)){
+                            isMenuOn = !isMenuOn
                         }
+                    }label: {
+                        ZStack {
+                          Circle()
+                                .fill(Color(red: 0.3411764705882353, green: 0.396078431372549, blue: 0.9490196078431372))
+                                .frame(width: isMenuOn ? 30 : 0, height:  isMenuOn ? 30 : 0)
+                            Image(systemName:"ellipsis.circle")
+                               .rotationEffect(.degrees(isMenuOn ? 90 : 0))
+                              .font(.system(size: 15))
+                              .fontWeight(.medium)
+                              .foregroundStyle(isMenuOn ? .white : .black)
+
+                              .shadow(radius: 8)
                     }
+                    }
+                         
+                    
                     
                 }
             }
             
         }
+        .overlay{
+            if isMenuOn{
+            
+                        VStack(spacing:15){
+                        Spacer()
+                            HStack{
+                                Spacer()
+                                
+                                NavigationLink(destination: MoreView()) {
+                                    HStack {
+                                        Text("Wayfinder")
+                                            .foregroundStyle(.white)
+                                            .font(.callout)
+                                            .fontDesign(.rounded)
+                                            .fontWeight(.light)
+                                        Circle()
+                                            .frame(width: 30, height: 30) // Adjust the size as needed
+                                            .overlay(
+                                                Image(systemName: "map")
+                                                    .font(.caption)
+                                                    .foregroundStyle(.white)
+                                                    .shadow(radius: 8)
+                                        )
+                                    }
+                                }
+
+                                    
+                                
+                                
+                            }.padding(.horizontal)
+                            HStack{
+                                Spacer()
+                                
+                                NavigationLink(destination: ChatView()) {
+                                    HStack {
+                                        Text("Office Buddy")
+                                            .foregroundStyle(.white)
+                                            .font(.callout)
+                                            .fontDesign(.rounded)
+                                            .fontWeight(.light)
+                                        Circle()
+                                            .frame(width: 30, height: 30) // Adjust the size as needed
+                                            .overlay(
+                                                Image(systemName: "message.fill")
+                                                    .font(.caption)
+                                                    .foregroundStyle(.white)
+                                                    .shadow(radius: 8)
+                                        )
+                                    }
+                                }
+
+                                    
+                                
+                                
+                            }.padding(.horizontal)
+                            HStack{
+                                Spacer()
+                                
+                                NavigationLink(destination: Events()) {
+                                    HStack {
+                                        Text("Events")
+                                            .foregroundStyle(.white)
+                                            .font(.callout)
+                                            .fontDesign(.rounded)
+                                            .fontWeight(.light)
+                                        Circle()
+                                            .frame(width: 30, height: 30) // Adjust the size as needed
+                                            .overlay(
+                                                Image(systemName: "calendar")
+                                                    .font(.caption)
+                                                    .foregroundStyle(.white)
+                                                    .shadow(radius: 8)
+                                        )
+                                    }
+                                }
+
+                                    
+                                
+                                
+                            }.padding(.horizontal)
+                            HStack{
+                                Spacer()
+                                
+                                Button{ withAnimation(.easeInOut(duration: 0.45)){
+                                    isWish = !isWish
+                                }
+                                    
+                                }label:{
+                                    HStack {
+                                        VStack(spacing:5){
+                                            HStack{
+                                                Text("Vijay's")
+                                                    .font(.caption)
+                                                    .fontWeight(.semibold)
+                                                    .foregroundStyle(.black)
+                                                Text("Birthday")
+                                                    .font(.caption)
+//                                                    .foregroundStyle(.accentColor)
+
+
+                                            }
+                                            HStack{
+                                                Text("Guhan's")
+                                                    .font(.caption)
+                                                    .fontWeight(.semibold)
+                                                    .foregroundStyle(.black)
+                                                Text("Work Anniversary")
+                                                    .font(.caption)
+                                                   // .foregroundStyle(.accentColor)
+
+
+                                            }
+                                        }   
+                                        .padding()                                    .background(RoundedRectangle(cornerRadius: 5, style: .continuous).fill(Color(red: 0.973, green: 0.972, blue: 0.981)).opacity(0.9))
+                                        Text("Wishes")
+                                            .foregroundStyle(.white)
+                                            .font(.callout)
+                                            .fontDesign(.rounded)
+                                            .fontWeight(.light)
+                                        Image("gift")
+                                        .resizable()
+                                        .frame(width: 28, height: 28)
+                                          .foregroundColor(.white)
+                                                                .shadow(radius: 8)
+                                                                .rotationEffect(isShaking ? Angle(degrees: -10) : Angle(degrees: 0))
+                                                                .animation(
+                                                                    Animation.easeInOut(duration: 0.3)
+                                                                        .repeatCount(500, autoreverses: true)
+                                                                        
+                                                                )
+                                        
+                                    }
+                                }
+
+                                    
+                                
+                                
+                            }
+                            .onAppear {
+                                withAnimation {
+                                    isShaking.toggle()
+                                }}
+                            .padding(.horizontal)
+
+                            Spacer()
+                            Spacer()
+                        }
+                
+                        .ignoresSafeArea(.all)
+                        .background(Color.black.opacity(0.6))
+                        //.mask(Color.black.opacity(0.3)) // Adjust the opacity here
+            
+            }else{ }
+        }
         .background(Color(red: 0.973, green: 0.972, blue: 0.981))
         
-    }
+           
+        
+        }
     }
  
    

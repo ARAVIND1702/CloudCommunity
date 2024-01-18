@@ -10,6 +10,11 @@ import SwiftUI
 import Firebase
 struct ReusablePostsView: View {
     var basedonUId : Bool = false
+    
+    //for handling the community
+    var basedonCommunity : Bool = false
+    var Community : String = ""
+    
     var uid : String = ""
     @Binding var posts: [Post]
     
@@ -76,7 +81,9 @@ struct ReusablePostsView: View {
             if basedonUId{
                 query = query.whereField("userUID", isEqualTo: uid)
             }
-            
+            if basedonCommunity{
+                query = query.whereField("community", isEqualTo: Community)
+            }
             let docs = try await query.getDocuments()
             let fetchedPosts = docs.documents.compactMap { doc -> Post? in
                 try? doc.data(as: Post.self)

@@ -1,16 +1,9 @@
-//
-//  PostCardView.swift
-//  CommunityCloud
-//
-//  Created by GGS-BKS on 21/08/23.
-//
-
 import SwiftUI
 import SDWebImageSwiftUI
 import Firebase
 import FirebaseStorage
 /// <#Description#>
-struct PostCardView: View {
+struct PostCardViewForCommunity: View {
     var post : Post
     
     var onUpdate:(Post)->()
@@ -30,39 +23,19 @@ struct PostCardView: View {
         
         VStack(alignment: .leading){
             HStack{
-                if post.community.isEmpty{
-                    WebImage(url:post.userProfileURL).placeholder{
-                        Image(systemName: "person.circle.fill")
-                            .resizable()
-                            .foregroundColor(Color(red: 0.339, green: 0.396, blue: 0.95))
-                    }
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 50,height: 50)
-                    .clipShape(Circle())
-                }
-                else{
-                    CommunityIcon(Community: post.community)
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 50,height: 50)
-                }
-                
-                
+                CommunityIcon(Community: post.community)
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 50,height: 50)
+//               .clipShape(Circle())
+//
 //                .overlay(
 //                    Circle()
 //                        .stroke(Color.black, lineWidth: 2)
 //                )
                 VStack(alignment: .leading){
-                    if post.community.isEmpty{
-                        Text(post.userName)
-                            .font(.system(size: 13))
-                            .bold()
-                    }else{
-                        Text(post.community.replacingOccurrences(of: "_", with: " "))
-                            .font(.system(size: 13))
-                            .bold()
-                    }
-                    
+                    Text(post.community.replacingOccurrences(of: "_", with: " "))
+                        .font(.system(size: 13))
+                        .bold()
                     Text(post.publishdedDate.formatted(date: .abbreviated,time: .shortened))
                         .font(.caption2)
                         .foregroundColor(.gray)
@@ -193,13 +166,3 @@ struct PostCardView: View {
     
     
 }
-
-//struct PostCardView_Previews: PreviewProvider {
-//    static var previews: some View {
-//                     PostCardView{ updatedPost in
-//
-//                     } onDelete: {
-//
-//                     }
-//    }
-//}

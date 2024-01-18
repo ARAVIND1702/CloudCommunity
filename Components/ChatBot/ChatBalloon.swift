@@ -30,3 +30,6 @@ struct ChatBalloon: View {
          .padding(.horizontal)    }
 }
 
+#Preview {
+    ChatBalloon(newMessage: "hello", formattedDate: "12.23.20")
+}

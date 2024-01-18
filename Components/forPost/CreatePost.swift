@@ -12,9 +12,10 @@ import FirebaseFirestoreSwift
 import FirebaseStorage
 import Firebase
 struct CreatePost: View {
+// community
+    var Community : String = ""
 
     var onPost: (Post)->()
-
     @State var postText: String = ""
     @State var postImageData : Data?
     
@@ -343,10 +344,10 @@ struct CreatePost: View {
                 if let postImageData{
                     let _ = try await storageRef.putDataAsync(postImageData)
                     let downloadURL = try await storageRef.downloadURL()
-                    let post = Post(text: postText,imageURl: downloadURL, imageRefernceID:imageRefernceId,userName: usernamestored, userUID: userUID, userProfileURL: profileURL ?? URL(string: "ASDasdas")!)
+                    let post = Post(community:Community,text: postText,imageURl: downloadURL, imageRefernceID:imageRefernceId,userName: usernamestored, userUID: userUID, userProfileURL: profileURL ?? URL(string: "ASDasdas")!)
                     try await createDocumentAtFireBase(post)
                 }else{
-                    let post = Post(text: postText,userName: usernamestored, userUID: userUID, userProfileURL: profileURL ?? URL(string: "ASDasdas")!)
+                    let post = Post(community:Community,text: postText,userName: usernamestored, userUID: userUID, userProfileURL: profileURL ?? URL(string: "ASDasdas")!)
                     try await createDocumentAtFireBase(post)
 
                 }

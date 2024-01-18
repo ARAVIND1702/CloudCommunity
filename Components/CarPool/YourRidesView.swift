@@ -29,7 +29,7 @@ struct YourRidesView: View {
                         
                     
                         .background(
-                            RoundedRectangle(cornerRadius: 10.0)
+                            RoundedRectangle(cornerRadius: 15.0)
                                 .fill(Color(red: 0.339, green: 0.396, blue: 0.95))
                                 .shadow(color:.black.opacity(0.1) ,radius: 1 ,y:2)
                             

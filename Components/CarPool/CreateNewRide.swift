@@ -51,7 +51,8 @@ struct CreateNewRide: View {
                                 .fill(.green)
                                 .frame(width: 10)
                                 .padding(.leading)
-                            TextField("", text: $Currentlocation, prompt: Text("Your current location").foregroundColor(.black))
+                            TextField("", text: $Currentlocation, prompt: Text("Your current location")
+                                .foregroundColor(.black))
                                 .foregroundColor(.black)
                                 .onChange(of: Currentlocation){ newValue in
                                     let geocoder = CLGeocoder()
